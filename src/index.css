@@ -1,13 +1,182 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Poppins&display=swap');
+
+* {
+   font-family: 'Poppins', sans-serif;
+   margin: 0;
+   padding: 0;
+}
+/* Navigation Design */
+.container {
+   display: flex;
+   background: rgb(0,0,0);
+   background: linear-gradient(0deg, rgba(0,0,0,1) 0%, #002c59 60%);
+   color: #fff;
+}
+.sideNavBar {
+   color: #fff;
+   width: 250px;
+   height: 100vh;
+   background-color: rgb(0, 0, 0);
+   padding: 10px 0 15px 15px;
+   box-shadow: 0 0 15px rgb(0, 0, 0);
+   transition: all .5s;
+}
+.topNav {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding-bottom: 15px;
+   margin-top: 15px;
+}
+.topNav > .hamburgerIcon {
+   display: none;
+   font-size: 20px;
+   padding: 10px;
+   margin: 10px 10px 10px 0;
+   height: 23px;
+   width: 20px;
+   border-radius: 50%;
+   z-index: 1;
+}
+.eachLink {
+   height: 3em;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   border-top-left-radius: 10px;
+   border-bottom-left-radius: 10px;
+   font-size: 18px;
+   color: rgb(192, 192, 192);
+   gap: 1.2rem;
+   text-decoration: none;
+   transition: all .3s;
+   margin-bottom: 10px;
+}
+.linksIcon {
+   font-size: 25px;
+}
+.linksName {
+   height: 1.9em;
+}
+.hamburgerIcon:hover, .eachLink:hover {
+   cursor: pointer;
+   background-color: #002c59;
+   transition: .2s all ease-in-out;
+}
+.hamburgerIcon:hover {
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.323);
+}
+.eachLink:hover {
+   padding: 0 10px 0 10px;
+   border-right: 2px solid #fff;
+   color: #fff;
+   
+}
+.active {
+   padding: 0 10px 0 10px;
+   border-right: 2px solid #fff;
+   background-color: #002c59;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.477);
+   transition: .2s all ease-in-out;
+   font-weight: 900;
+   color: #fff;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Responsive design */
+@media (max-width: 768px) {
+   .text-inputs {
+      display: flex;
+      flex-direction: column-reverse;
+   }
+   .sideNavBar {
+      position: absolute;
+   }
+   .topNav > .hamburgerIcon {
+      display: block;
+   }
+   .homePage, .informationPage, .guidePage, .contactPage {
+      font-size: 12px;
+      padding: 20px;
+   }
+   .topNav {
+      padding-bottom: 12px;
+      margin-top: 12px;
+   }
+   .topNav > .hamburgerIcon {
+      font-size: 18px;
+   }
+   .eachLink {
+      height: 2.5em;
+      font-size: 16px;
+      gap: 1rem;
+   }
+   .linksIcon {
+      font-size: 23px;
+   }
+   .linksName {
+      height: 1.7em;
+   }
 }
+
+/* Pages Design */
+.homePage, .informationPage, .guidePage, .contactPage {
+   height: 100vh;
+   padding: 20px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+}
+
+.contactContainer {
+   margin-top: 15px;
+   display: flex;
+   flex-direction: column;
+   gap: 1em;
+   justify-content: center;
+   align-items: center;
+}
+
+.text-inputs {
+   display: flex;
+   gap: 1rem;
+}
+
+.text-inputs > input {
+   padding: 10px 15px;
+   border-radius: 8px;
+   border: 1px solid #c0c0c0;
+   font-size: 15px;
+}
+
+.msg-input > textarea {
+   padding: 20px 50px 20px 15px;
+   border-radius: 8px;
+   border: 1px solid #c0c0c0;
+   font-size: 15px;
+}
+
+.submitBtn {
+   padding: 5px 30px;
+   font-size: 1.2em;
+   border-radius: 8px;
+   border: 1px solid transparent;
+   background-color: #0076ca;
+   color: #fff;
+   cursor: pointer;
+}
+
+.text-inputs > input:focus, .msg-input > textarea:focus {
+   outline: none;
+   box-shadow: inset 0 0 5px #555
+}
+.submitBtn:hover {
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.477);
+}
+.text-inputs > input:hover, .msg-input > textarea:hover {
+   box-shadow: inset 0 0 5px #555555
+}
+
+
+
+
