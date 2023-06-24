@@ -64,7 +64,7 @@ const Sidebar = ({children}) => {
         </div>
         {
           navLinks.map((links, index) => (
-            <NavLink to={links.path} key={index} onClick={isWidth && toggleSideBarOpen} className="eachLink" activeclassName="active">
+            <NavLink to={links.path} key={index} onClick={isWidth && toggleSideBarOpen} className="eachLink" activeclassname="active">
               <div className="linksIcon"> {links.icon} </div>
               <div className="linksName"> {links.name} </div>
             </NavLink>
