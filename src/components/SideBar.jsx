@@ -32,7 +32,7 @@ const Sidebar = ({children}) => {
 
   const [isOpen, setIsOpen] = useState(true);
   const toggleSideBarOpen = () => {
-    if(window.innerWidth < 768) {
+    if(window.innerWidth <= 768) {
       setIsOpen(!isOpen);
     }
   };
