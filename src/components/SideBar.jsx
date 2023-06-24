@@ -31,9 +31,10 @@ const Sidebar = ({children}) => {
   ]
 
   const [isOpen, setIsOpen] = useState(true);
-  const [isWidth, setIsWidth] = useState(true);
   const toggleSideBarOpen = () => {
-    setIsOpen(!isOpen);
+    if(window.innerWidth < 768) {
+      setIsOpen(!isOpen);
+    }
   };
   
   useEffect(() => {
@@ -41,10 +42,8 @@ const Sidebar = ({children}) => {
       const screenWidth = window.innerWidth;
       if (screenWidth >= 768) {
         setIsOpen(true);
-        setIsWidth(false);
       } else {
         setIsOpen(false);
-        setIsWidth(true);
       }
     };
 
@@ -64,7 +63,7 @@ const Sidebar = ({children}) => {
         </div>
         {
           navLinks.map((links, index) => (
-            <NavLink to={links.path} key={index} onClick={isWidth && toggleSideBarOpen} className="eachLink" activeclassname="active">
+            <NavLink to={links.path} key={index} onClick={toggleSideBarOpen} className="eachLink" activeclassname="active">
               <div className="linksIcon"> {links.icon} </div>
               <div className="linksName"> {links.name} </div>
             </NavLink>
